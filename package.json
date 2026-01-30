@@ -1,12 +1,17 @@
 {
-  "name": "myApp",
+  "name": "myapp",
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://yoryinin.github.io/ionic-app/",
   "scripts": {
-    "build": "ionic build",
-    "deploy": "ionic build --prod --base-href /mi-app-ionic/ && gh-pages -d www",
-    "predeploy": "npm run build"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && npx gh-pages -d dist",
+    "test.e2e": "cypress run",
+    "test.unit": "vitest",
+    "lint": "eslint"
   },
   "dependencies": {
     "@capacitor/android": "8.0.2",
@@ -17,13 +22,10 @@
     "@capacitor/status-bar": "8.0.0",
     "@ionic/react": "^8.5.0",
     "@ionic/react-router": "^8.5.0",
-    "@types/react-router": "^5.1.20",
-    "@types/react-router-dom": "^5.3.3",
     "ionicons": "^7.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4",
+    "react-router-dom": "^6.8.0",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
@@ -41,7 +43,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
     "jsdom": "^22.1.0",
     "terser": "^5.4.0",
