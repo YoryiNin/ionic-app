@@ -23,7 +23,7 @@ cd ionic-app
 npm install
 
 
-⚠️ No borres ni instales react-scripts
+ No borres ni instales react-scripts
 Este proyecto usa Vite, no Create React App.
 
  Ejecutar en modo desarrollo
