@@ -1,0 +1,213 @@
+
+
+.table-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #121212; /* Fondo oscuro */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.instruction {
+  text-align: center;
+  color: #bb86fc; /* Morado Material Design */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 8px rgba(187, 134, 252, 0.3);
+}
+
+.input-item {
+  margin: 20px 0;
+}
+
+.input-item ion-input {
+  --padding-start: 10px;
+  font-size: 1.1rem;
+  --color: #ffffff; /* Texto blanco */
+  --placeholder-color: #8a8a8a; /* Placeholder gris */
+  --background: #2d2d2d; /* Fondo oscuro input */
+  border-radius: 8px;
+}
+
+.table-title {
+  text-align: center;
+  color: #bb86fc; /* Morado */
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #333333; /* Línea divisoria oscura */
+  text-shadow: 0 2px 10px rgba(187, 134, 252, 0.2);
+}
+
+.table-row {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin: 5px 0;
+}
+
+.multiplication-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  background: #2d2d2d; /* Fondo oscuro */
+  border-radius: 8px;
+  border-left: 4px solid #bb86fc; /* Borde morado */
+  transition: all 0.3s ease;
+  border-top: 1px solid #333333;
+}
+
+.multiplication-item:hover {
+  background: #333333; /* Fondo más claro al hover */
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.operation {
+  font-weight: 500;
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.1rem;
+}
+
+.result {
+  font-weight: bold;
+  color: #03dac6; /* Verde azulado Material Design */
+  font-size: 1.2rem;
+  background: #1e1e1e; /* Fondo oscuro */
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+}
+
+.info-card {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%); /* Gradiente oscuro */
+  border: 1px solid #333333;
+  border-radius: 12px;
+}
+
+.info-card h3 {
+  color: #bb86fc; /* Morado */
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.info-card p {
+  color: #b0b0b0; /* Gris claro */
+  line-height: 1.5;
+}
+
+.error-message {
+  color: #cf6679; /* Rojo Material Design oscuro */
+  text-align: center;
+  padding: 10px;
+  background: #2d1e1e; /* Fondo rojo oscuro */
+  border-radius: 8px;
+  margin-top: 10px;
+  border-left: 4px solid #cf6679;
+  border: 1px solid #333333;
+}
+
+/* Animación para la tabla - Oscuro */
+@keyframes fadeInRowDark {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.table-row {
+  animation: fadeInRowDark 0.3s ease-out forwards;
+}
+
+/* Estilo para filas pares/impares - Oscuro */
+.table-row:nth-child(even) .multiplication-item {
+  background: #2a2a2a;
+  border-left-color: #9a67ea; /* Morado más oscuro */
+}
+
+.table-row:nth-child(odd) .multiplication-item {
+  border-left-color: #7c4dff; /* Morado vibrante */
+}
+
+.table-row:nth-child(even) .multiplication-item:hover {
+  background: #333333;
+}
+
+.table-row:nth-child(odd) .multiplication-item:hover {
+  background: #333333;
+}
+
+/* Responsive - Oscuro */
+@media (max-width: 768px) {
+  .table-title {
+    font-size: 1.5rem;
+  }
+  
+  .operation {
+    font-size: 1rem;
+  }
+  
+  .result {
+    font-size: 1.1rem;
+    padding: 3px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .multiplication-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .result {
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+  
+  .table-container {
+    padding: 15px;
+  }
+}
+
+/* Efectos especiales para modo oscuro */
+.multiplication-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(187, 134, 252, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.multiplication-item:hover::before {
+  opacity: 1;
+}
+
+/* Scrollbar personalizado */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
